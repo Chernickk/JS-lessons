@@ -1,0 +1,25 @@
+<script>
+    // # 1
+    "use strict";
+
+    var Tc = parseFloat(prompt('Введите температуру в градусах Цельсия'));
+    var Tf = (9 / 5) * Tc + 32;
+
+    alert(`Температура в градусах Фаренгейта: ${Tf}`);
+</script>
+
+<script>
+    // # 2
+    "use strict";
+    var admin;
+    var name = 'Vasiliy';
+    admin = name;
+    alert(admin);
+    name = 'Fedya';
+    alert(admin);
+</script>
+
+<script>
+    // Результат будет равен '1000108', т.к. приоритетная операция - конкатенация
+    alert(1000 + "108")
+</script>
