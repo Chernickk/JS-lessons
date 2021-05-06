@@ -1,0 +1,166 @@
+<script>
+    // Задание 1 
+    var a = 1, b = 1, c, d;
+    c = ++a; //alert(c);           // 2 ++а возвращает 2 далее выполняется присваивание
+    d = b++; //alert(d);           // 1 b++ возвращает один, а также меняет b на 2 
+    c = (2 + ++a); //alert(c);      // 5 как и выше, а меняет значение на 3, 3 + 2 = 5
+    d = (2 + b++); //alert(d);      // 4 b++ меняет значение на 3, но возвращает 2, 2 + 2 = 4
+    //alert(a);                    // 3
+    //alert(b);                    // 3
+</script>
+
+<script>
+    // Задание 2 
+    var a = 2;
+    var x = 1 + (a *= 2);
+    // a *= 2 присваивает а значение 4, далее 1 + 4 = 5
+</script>
+
+<script>
+    // Задание 3
+    a = parseFloat(prompt('a ='));
+    b = parseFloat(prompt('b ='));
+    if (a >= 0 & b >= 0) {
+        alert(`Разность а и б: ${a - b}`)
+    } else if (a < 0 & b < 0) {
+        alert(`Произведение а и б: ${a * b}`)
+    } else {
+        alert(`Сумма а и б: ${a + b}`)
+    }
+</script>
+
+<script>
+    // Задание 4 
+    // Ужасное монструозное решение, т.к. циклы и тд мы не проходили, другого в голову не пришло
+    a = parseInt(prompt('Целое число от 0 до 15 '))
+    if (0 <= a <= 15) {
+        switch (a) {
+            case 0:
+                alert('1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 1:
+                alert('2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 2:
+                alert('3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 3:
+                alert('4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 4:
+                alert('5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 5:
+                alert('6, 7, 8, 9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 6:
+                alert('7, 8, 9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 7:
+                alert('8, 9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 8:
+                alert('9, 10, 11, 12, 13, 14, 15');
+                break;
+            case 9:
+                alert('10, 11, 12, 13, 14, 15');
+                break;
+            case 10:
+                alert('11, 12, 13, 14, 15');
+                break;
+            case 11:
+                alert('12, 13, 14, 15');
+                break;
+            case 12:
+                alert('13, 14, 15');
+                break;
+            case 13:
+                alert('14, 15');
+                break;
+            case 14:
+                alert('15');
+                break;
+            case 15:
+                alert(null);
+                break;
+        }
+    } else {
+        alert('bad input')
+    }
+</script>
+
+<script>
+    // Задание 5
+    function sum(a, b) {
+        return parseFloat(a) + parseFloat(b);
+    }
+
+    function diff(a, b) {
+        return parseFloat(a) - parseFloat(b);
+    }
+
+    function mul(a, b) {
+        return parseFloat(a) * parseFloat(b);
+    }
+
+    function div(a, b) {
+        return parseFloat(a) / parseFloat(b);
+    }
+
+    // alert(sum(10, 10))
+    // alert(diff(10, 10))
+    // alert(mul(10, 10))
+    // alert(div(10, 10))
+</script>
+
+<script>
+    // Задание 6 
+    function mathOperation(a, b, operation) {
+        switch (operation) {
+            case '+':
+                return parseFloat(a) + parseFloat(b);
+            case '-':
+                return parseFloat(a) - parseFloat(b);
+            case '*':
+                return parseFloat(a) * parseFloat(b);
+            case '/':
+                return parseFloat(a) / parseFloat(b);
+            case '%':
+                return parseFloat(a) % parseFloat(b);
+            default:
+                return 'unsupported operation'
+        }
+    }
+
+    // alert(mathOperation(10, 10, '+'))
+    // alert(mathOperation(10, 10, '-'))
+    // alert(mathOperation(10, 10, '*'))
+    // alert(mathOperation(10, 10, '/'))
+    // alert(mathOperation(10, 10, '%'))
+    // alert(mathOperation(10, 10, '&'))
+
+</script>
+
+<script>
+    // Задание 8
+    function power(val, pow) {
+        val = parseFloat(val);
+        pow = parseInt(pow);
+        if (!isNaN(pow)) {
+            if (pow > 1) {
+                return val * power(val, --pow);
+            } else if (pow == 1) {
+                return val;
+            } else if (pow == 0) {
+                return 1;
+            } else if (pow < 0) {
+                return 1 / (power(val, Math.abs(pow)));
+            }
+        }
+    }
+
+    alert(power(2, 4)) // 16
+    alert(power(2, 1)) // 2
+    alert(power(2, 0)) // 1
+    alert(power(2, -2)) // 0.25
+</script>
