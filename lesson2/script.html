@@ -118,15 +118,13 @@
     function mathOperation(a, b, operation) {
         switch (operation) {
             case '+':
-                return parseFloat(a) + parseFloat(b);
+                return sum(a, b);
             case '-':
-                return parseFloat(a) - parseFloat(b);
+                return diff(a, b);
             case '*':
-                return parseFloat(a) * parseFloat(b);
+                return mul(a, b);
             case '/':
-                return parseFloat(a) / parseFloat(b);
-            case '%':
-                return parseFloat(a) % parseFloat(b);
+                return div(a, b);
             default:
                 return 'unsupported operation'
         }
