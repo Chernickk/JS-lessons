@@ -1,0 +1,47 @@
+<script>
+    // Task 1
+    function isPrime(n) {
+        if (n == 0 | n == 1) return false;
+        for (let i = 2; i < n; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    for (let i = 0; i <= 100; i++) {
+        if (isPrime(i) == true) console.log(i);
+    }
+</script>
+
+<script>
+    // Task 2
+    var good1 = ['keyboard', 799.9, 2];
+    var good2 = ['mouse', 500, 1];
+    var good3 = ['display', 2500, 2];
+
+    var basket = [good1, good2, good3];
+
+    function countBasketPrice(basket) {
+        let sum = 0;
+        for (let i = 0; i < basket.length; i++) {
+            sum += basket[i][1] * basket[i][2];
+        }
+        return sum;
+    }
+
+    console.log(countBasketPrice(basket));
+</script>
+
+<script>
+    // Task 3 
+    for (i = 0; i < 10; console.log(i++)) { }
+</script>
+
+<script>
+    // Task 4
+    let str = '';
+    for (let i = 0; i < 20; i++) {
+        str += 'x';
+        console.log(str);
+    }
+</script>
