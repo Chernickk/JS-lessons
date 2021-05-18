@@ -1,0 +1,63 @@
+<script>
+    function numToObj(num) {
+        if (0 <= num && num <= 999) {
+            return {
+                hundreds: Math.floor(num / 100),
+                tens: Math.floor(num % 100 / 10),
+                ones: num % 10
+            };
+        } else return {};
+    }
+
+    // console.log(numToObj(404));
+    // console.log(numToObj(1404));
+    // console.log(numToObj(-404));
+    // console.log(numToObj(555));
+</script>
+
+<script>
+    // Обьекты в магазине
+    mouse = {
+        name: 'logitech',
+        quantity: 20,
+        price: 999
+    }
+
+    keyboard = {
+        name: 'razor',
+        quantity: 25,
+        price: 2500
+    }
+
+    // Корзина
+    basket = {
+        // 1: {
+        //     good: mouse,
+        //     count: 3
+        // },
+
+        goodsCount: 0,
+
+        appendGood(good, count) {
+            this[this.goodsCount] = {
+                good: good,
+                count: count
+            };
+            this.goodsCount++;
+        },
+
+        getSum() {
+            sum = 0
+            for (const prop in this) {
+                if (!isNaN(prop)) {
+                    sum += this[prop].good.price * this[prop].count
+                }
+            };
+            return sum;
+        }
+    };
+    basket.appendGood(mouse, 3);
+    basket.appendGood(keyboard, 3);
+    console.log(basket);
+    console.log(basket.getSum());
+</script>
