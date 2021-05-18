@@ -6,7 +6,10 @@
                 tens: Math.floor(num % 100 / 10),
                 ones: num % 10
             };
-        } else return {};
+        } else {
+            console.log('Нужно число от 0 до 999');
+            return {};
+        };
     }
 
     // console.log(numToObj(404));
