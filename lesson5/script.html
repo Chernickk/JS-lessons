@@ -22,45 +22,35 @@
     // Обьекты в магазине
     mouse = {
         name: 'logitech',
-        quantity: 20,
+        quantity: 3,
         price: 999
     }
 
     keyboard = {
         name: 'razor',
-        quantity: 25,
+        quantity: 3,
         price: 2500
     }
 
     // Корзина
     basket = {
-        // 1: {
-        //     good: mouse,
-        //     count: 3
-        // },
 
-        goodsCount: 0,
 
-        appendGood(good, count) {
-            this[this.goodsCount] = {
-                good: good,
-                count: count
-            };
-            this.goodsCount++;
-        },
+        goodsList: [],
 
         getSum() {
             sum = 0
-            for (const prop in this) {
-                if (!isNaN(prop)) {
-                    sum += this[prop].good.price * this[prop].count
-                }
+            for (const good in this.goodsList) {
+                sum += this.goodsList[good].price * this.goodsList[good].quantity
             };
             return sum;
         }
     };
-    basket.appendGood(mouse, 3);
-    basket.appendGood(keyboard, 3);
+
+    basket.goodsList.push(mouse);
+
+    basket.goodsList.push(keyboard);
+
     console.log(basket);
     console.log(basket.getSum());
 </script>
