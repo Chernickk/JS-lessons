@@ -1,0 +1,23 @@
+.catalogGood {
+    background-color: rgb(194, 194, 194);
+    border: black solid 1px;
+}
+
+.cartGood {
+    background-color: blanchedalmond;
+    border: black solid 1px;
+}
+
+.buyButton {
+    background-color: rgb(202, 220, 224);
+    border: black solid 1px;
+}
+
+.clearButton {
+    background-color: rgb(202, 220, 224);
+    border: black solid 1px;
+}
+
+.hidden {
+    display: none;
+}
