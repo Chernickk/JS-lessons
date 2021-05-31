@@ -32,6 +32,9 @@ td.cell{
 .food{
     background: #00d021;
 }
+.wall {
+    background: blue;
+}
 .snakeBody{
     background: #e5e5e5;
 }
@@ -41,6 +44,10 @@ td.cell{
 .disabled {
     background: #7c7c7c;
 }
-.disabled:hover{
+.disabled:hover {
     background: #7c7c7c;
+}
+.score {
+    text-align: center;
+    color: white;
 }
