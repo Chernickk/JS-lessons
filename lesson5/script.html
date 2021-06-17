@@ -1,0 +1,121 @@
+<table class="chess"></table>
+
+<script>
+
+    function createChessTable() {
+        letters = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+        numbers = ['', '8', '7', '6', '5', '4', '3', '2', '1']
+        chessTable = document.querySelector('.chess');
+
+        for (let row = 0; row < 9; row++) {
+            myTr = document.createElement('tr');
+            for (let col = 0; col < 9; col++) {
+                myTd = document.createElement('td');
+                myTd.style.height = '20px';
+                myTd.style.width = '20px';
+                if (row == 0) {
+                    text = document.createTextNode(letters[col]);
+                    myTd.appendChild(text);
+                } else if (col == 0) {
+                    text = document.createTextNode(numbers[row]);
+                    myTd.appendChild(text);
+                } else if (row % 2 == 0 && col % 2 == 1) {
+                    myTd.style.backgroundColor = 'black';
+                } else if (row % 2 == 1 && col % 2 == 0) {
+                    myTd.style.backgroundColor = 'black';
+                }
+                myTr.appendChild(myTd);
+            }
+            chessTable.appendChild(myTr);
+        }
+    }
+
+    createChessTable()
+
+</script>
+
+<div class="basket"></div>
+
+<script>
+    basket = {
+
+
+        goodsList: [
+            {
+                name: 'razor keyboard',
+                quantity: 3,
+                price: 2500
+            },
+            {
+                name: 'logitech',
+                quantity: 3,
+                price: 999
+            }],
+
+        getSum() {
+            sum = 0;
+            for (const good in this.goodsList) {
+                sum += this.goodsList[good].price * this.goodsList[good].quantity
+            };
+            return sum;
+        },
+
+        getAmount() {
+            amount = 0;
+            for (const good in this.goodsList) {
+                amount += this.goodsList[good].quantity
+            };
+            return amount;
+        },
+
+        getStatus() {
+            if (this.goodsList.length == 0) {
+                return 'Корзина пуста';
+            } else {
+                return `В корзине ${this.getAmount()} товаров на сумму ${this.getSum()} рублей`;
+            }
+        }
+    };
+
+    basketClass = document.querySelector('.basket');
+    text = document.createTextNode(basket.getStatus());
+    basketClass.appendChild(text);
+
+</script>
+
+<div id="catalog"></div>
+
+<script>
+    product = [
+        {
+            id: 1,
+            name: 'logitech mouse',
+            price: 999,
+            amount: 20
+        },
+        {
+            id: 2,
+            name: 'logitech keyboard',
+            price: 499,
+            amount: 15
+        },
+        {
+            id: 3,
+            name: 'dell notebook',
+            price: 49999,
+            amount: 3
+        },
+    ]
+
+    function renderCatalog(product) {
+        const catalog = document.getElementById('catalog');
+
+        for (const good in product) {
+            catalog.insertAdjacentHTML('beforeend', `<div><h4>${product[good].name}</h4><br><p>price: ${product[good].price} amount: ${product[good].amount}</p></div>`);
+        }
+    }
+
+    renderCatalog(product);
+
+
+</script>
